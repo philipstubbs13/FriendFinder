@@ -14,30 +14,28 @@ module.exports = function(app) {
     res.json(friendsData);
   });
 
-	// Search for Specific Character (or all characters) - provides JSON
-	// app.get("/api/:friends?", function(req, res) {
-	//   var chosen = req.params.friends;
-
-	//   if (chosen) {
-	//     console.log(chosen);
-
-	//     for (var i = 0; i < friends.length; i++) {
-	//       if (chosen === friends[i].routeName) {
-	//         return res.json(friends[i]);
-	//       }
-	//     }
-	//     return res.json(false);
-	//   }
-	//   return res.json(friends);
-	// });
-
-
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
   // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
+  // ...the JSON is pushed to a Javascript array.
+  // (ex. User fills out a survey... this data is then sent to the server...
+  // Then the server saves the data to the friendsData array)
   // ---------------------------------------------------------------------------
 
+  app.post("/api/new", function(req, res) {
+    // Note the code here. Our "server" will respond to requests.
+    // req.body is available since we're using the body-parser middleware
+	// req.body hosts is equal to the JSON post sent from the user
+	// This works because of our body-parser middleware
+	var newuser = req.body;
+	// Using a RegEx Pattern to remove spaces from newCharacter
+	// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+	//newuser.routeName = newuser.name.replace(/\s+/g, "").toLowerCase();
+	
+	console.log(newuser);
+
+	friendsData.push(newuser);
+
+	res.json(newuser);
+  });
 }
