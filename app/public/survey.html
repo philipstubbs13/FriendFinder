@@ -142,6 +142,30 @@
     </form>
 	</div>
 
+  <!--Best Friend/Your Match Modal-->
+  <div class="modal" tabindex="-1" role="dialog" id="bestFriendModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Steph Curry</p>
+          <img src="https://espntheundefeated.files.wordpress.com/2017/04/20170405_mjr_su5_046_13725708.jpg?w=1024" width=350px height= 250px>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Bootstrap Javascript and jQuery links-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
@@ -183,6 +207,8 @@
       $.post("/api/friends", newUserSurvey, function(data) {
         	console.log(data);
             alert("Yay! Survey submitted!");
+
+          $('#bestFriendModal').modal('toggle');
 
           // Clear the form when submitting
           	$("#username").val("");
