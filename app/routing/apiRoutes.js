@@ -22,7 +22,7 @@ module.exports = function(app) {
   // Then the server saves the data to the friendsData array)
   // ---------------------------------------------------------------------------
 
-  app.post("/api/new", function(req, res) {
+  app.post("/api/friends", function(req, res) {
     // Note the code here. Our "server" will respond to requests.
     // req.body is available since we're using the body-parser middleware
 	// req.body hosts is equal to the JSON post sent from the user
