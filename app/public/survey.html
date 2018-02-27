@@ -22,10 +22,10 @@
 		<form method="POST" role="form">
 			<h3><strong>About you</strong></h3>
 			<label for="exampleFormControlInput1">Name (required)</label>
-    	<input type="text" class="form-control" id="username" placeholder="">
+    	<input type="text" class="form-control" id="username" placeholder="" required>
 
     	<label for="exampleFormControlInput1" class="mt-3">Link to photo image (required)</label>
-    	<input type="text" class="form-control" id="userphoto" placeholder="">
+    	<input type="text" class="form-control" id="userphoto" placeholder="" required>
     	<hr>
 
   		<h4 class="mt-4"><strong>Question 1</strong></h4>
@@ -140,6 +140,12 @@
 
 			<a href="#0"><button type="submit" class="btn btn-primary mt-4 submit"><i class="fas fa-check-circle"></i> Submit</button></a>
     </form>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <p><a href="api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/philipstubbs13/FriendFinder" target="_blank">GitHub Repo</a></p>
+      </div>
+    </footer>
 	</div>
 
   <!--Best Friend/Your Match Modal-->
