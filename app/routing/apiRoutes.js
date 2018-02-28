@@ -41,39 +41,37 @@ module.exports = function(app) {
 
     //After we parse the newuser data from survey...
     console.log(newUser);
-    console.log("New username: " + newUserName);
-    console.log("New userphoto: " + newUserPhoto);
 
- //    //Need to create a variable to hold the total difference in scores between the new user and the existing friends we are comparing.
- //    var totalDifference = 0;
+    //Need to create a variable to hold the total difference in scores between the new user and the existing friends we are comparing.
+    var totalDifference = 0;
 
- //    //Loop through the friendsData array to find the perfect friend.
- //    for (var i = 0; i < friendsData.length; i++) {
- //      //Each time we loop through, set the difference in scores back to 0.
- //      totalDifference = 0;
- //      console.log("Friend: " + friendsData[i].name);
- //      //Create another loop that goes through the scores of each friend in the array.
- //      for (var j = 0; j < friendsData[i].scores[j]; j++) {
- //        //Determine absolute value difference between scores.
- //        //Add difference in scores for each question to the totalDifference variable.
- //        totalDifference += Math.abs(parseInt(newUserScores[j]) - parseInt(friendsData[i].scores[j]));
- //        console.log(totalDifference);
+    //Loop through the friendsData array to find the perfect friend.
+    for (var i = 0; i < friendsData.length; i++) {
+      //Each time we loop through, set the difference in scores back to 0.
+      totalDifference = 0;
+      console.log("Friend: " + friendsData[i].name);
+      //Create another loop that goes through the scores of each friend in the array.
+      for (var j = 0; j < friendsData[i].scores[j]; j++) {
+        //Determine absolute value difference between scores.
+        //Add difference in scores for each question to the totalDifference variable.
+        totalDifference += Math.abs(parseInt(newUserScores[j]) - parseInt(friendsData[i].scores[j]));
 
- //        //If the total difference is less than the difference of the current perfectFriend, set this friend as the perfectFriend.
- //        if (totalDifference < perfectFriend.scoreDifference) {
- //          perfectFriend.name = friendsData[i].name;
- //          perfectFriend.photo = friendsData[i].photo;
- //          perfectFriend.scoreDifference = totalDifference;
+        //If the total difference is less than the difference of the current perfectFriend, set this friend as the perfectFriend.
+        if (totalDifference < perfectFriend.scoreDifference) {
+          perfectFriend.name = friendsData[i].name;
+          perfectFriend.photo = friendsData[i].photo;
+          perfectFriend.scoreDifference = totalDifference;
 
- //          console.log(perfectFriend.name);
- //        }
- //      }
- //    }
+          console.log("Perfect Friend:" + perfectFriend.name);
+        }
+      }
+      console.log("Difference in scores: " + totalDifference);
+    }
 
- //  //After we find a match for the new user, push the user to the friendsData array.
-	// friendsData.push(newUser);
+  //After we find a match for the new user, push the user to the friendsData array.
+	friendsData.push(newUser);
 
- //  //Return the friend match as json so that we can display the match to the user in the html.
-	// res.json(perfectFriend);
+  //Return the friend match as json so that we can display the match to the user in the html.
+	res.json(perfectFriend);
   });
 }
