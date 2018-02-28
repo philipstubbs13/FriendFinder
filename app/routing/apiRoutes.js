@@ -23,19 +23,57 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.post("/api/friends", function(req, res) {
+    //When we find the perfect friend match, we need an object to hold the match.
+    var perfectFriend = {
+      name: "",
+      photo: "",
+      scoreDifference: 200
+    }
+
     // Note the code here. Our "server" will respond to requests.
     // req.body is available since we're using the body-parser middleware
-	// req.body hosts is equal to the JSON post sent from the user
-	// This works because of our body-parser middleware
-	var newuser = req.body;
-	// Using a RegEx Pattern to remove spaces from newCharacter
-	// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-	//newuser.routeName = newuser.name.replace(/\s+/g, "").toLowerCase();
-	
-	console.log(newuser);
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body-parser middleware
+    var newUser = req.body;
+    var newUserPhoto = req.body.photo;
+    var newUserName = req.body.name;
+    var newUserScores = req.body.score;
 
-	friendsData.push(newuser);
+    //After we parse the newuser data from survey...
+    console.log(newUser);
+    console.log("New username: " + newUserName);
+    console.log("New userphoto: " + newUserPhoto);
 
-	res.json(newuser);
+ //    //Need to create a variable to hold the total difference in scores between the new user and the existing friends we are comparing.
+ //    var totalDifference = 0;
+
+ //    //Loop through the friendsData array to find the perfect friend.
+ //    for (var i = 0; i < friendsData.length; i++) {
+ //      //Each time we loop through, set the difference in scores back to 0.
+ //      totalDifference = 0;
+ //      console.log("Friend: " + friendsData[i].name);
+ //      //Create another loop that goes through the scores of each friend in the array.
+ //      for (var j = 0; j < friendsData[i].scores[j]; j++) {
+ //        //Determine absolute value difference between scores.
+ //        //Add difference in scores for each question to the totalDifference variable.
+ //        totalDifference += Math.abs(parseInt(newUserScores[j]) - parseInt(friendsData[i].scores[j]));
+ //        console.log(totalDifference);
+
+ //        //If the total difference is less than the difference of the current perfectFriend, set this friend as the perfectFriend.
+ //        if (totalDifference < perfectFriend.scoreDifference) {
+ //          perfectFriend.name = friendsData[i].name;
+ //          perfectFriend.photo = friendsData[i].photo;
+ //          perfectFriend.scoreDifference = totalDifference;
+
+ //          console.log(perfectFriend.name);
+ //        }
+ //      }
+ //    }
+
+ //  //After we find a match for the new user, push the user to the friendsData array.
+	// friendsData.push(newUser);
+
+ //  //Return the friend match as json so that we can display the match to the user in the html.
+	// res.json(perfectFriend);
   });
 }
