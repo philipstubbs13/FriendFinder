@@ -51,7 +51,7 @@ module.exports = function(app) {
       totalDifference = 0;
       console.log("Friend: " + friendsData[i].name);
       //Create another loop that goes through the scores of each friend in the array.
-      for (var j = 0; j < friendsData[i].scores[j]; j++) {
+      for (var j = 0; j < friendsData[i].scores.length; j++) {
         //Determine absolute value difference between scores.
         //Add difference in scores for each question to the totalDifference variable.
         totalDifference += Math.abs(parseInt(newUserScores[j]) - parseInt(friendsData[i].scores[j]));

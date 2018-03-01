@@ -159,8 +159,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Steph Curry</p>
-          <img src="https://espntheundefeated.files.wordpress.com/2017/04/20170405_mjr_su5_046_13725708.jpg?w=1024" width=350px height= 250px>
+          <p id="perfectFriend"></p>
+          <img id="perfectFriendPhoto" width=350px height= 250px>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -216,6 +216,8 @@
         	console.log(data);
             alert("Yay! Survey submitted!");
 
+          $('#perfectFriend').text(data.name);
+          $('#perfectFriendPhoto').attr("src", data.photo);
           $('#bestFriendModal').modal('toggle');
 
           // Clear the form when submitting
