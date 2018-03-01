@@ -17,4 +17,9 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
+
+  //The 404 Route (ALWAYS Keep this as the last route)
+  app.get('*', function(req, res){
+  res.status(404).sendFile(path.join(__dirname, "../public/404notfound.html"));
+});
 };

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>friend finder</title>
+	<title>CarpoolBuddy</title>
 
     <!--Bootstrap css link-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -115,7 +115,7 @@
       		</select>
 
       		<h4 class="mt-4"><strong>Question 7</strong></h4>
-      		<label for="exampleFormControlSelect1">In a discussion, truth should be more important than people’s sensitivities.</label>
+      		<label for="exampleFormControlSelect1">You often curse when you're stuck in traffic.</label>
       		<select class="custom-select" id="question7">
       			<option selected></option>
               <option value=1>1 (Strongly disagree)</option>
@@ -251,7 +251,7 @@
       // The callback is the response of the server.
       $.post("/api/friends", newUser, function(data) {
         	console.log(data);
-            console.log("Yay! Survey submitted!");
+          console.log("Yay! Survey submitted!");
 
           //Use jQuery to display the name and photo of the friend match in a modal.
           $('#perfectFriend').text(data.name);
