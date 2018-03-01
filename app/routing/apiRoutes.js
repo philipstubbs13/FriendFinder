@@ -37,7 +37,7 @@ module.exports = function(app) {
     var newUser = req.body;
     var newUserPhoto = req.body.photo;
     var newUserName = req.body.name;
-    var newUserScores = req.body.score;
+    var newUserScores = req.body.scores;
 
     //After we parse the newuser data from survey...
     console.log(newUser);
