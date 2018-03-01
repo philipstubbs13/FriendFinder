@@ -19,13 +19,21 @@
 	<div class="container">
 		<h2>Survey questions</h2>
 		<hr>
-		<form method="POST" role="form">
+		<form method="POST" role="form" novalidate>
 			<h3><strong>About you</strong></h3>
 			<label for="exampleFormControlInput1">Name (required)</label>
-    	<input type="text" class="form-control" id="username" placeholder="" required>
+      <div class="input-group">
+      	<input type="text" class="form-control" id="username" placeholder="" required>
+        <div class="invalid-feedback">
+            Enter your name.
+        </div>
+      </div>
 
     	<label for="exampleFormControlInput1" class="mt-3">Link to photo image (required)</label>
     	<input type="text" class="form-control" id="userphoto" placeholder="" required>
+      <div class="invalid-feedback">
+        Provide a link to a photo of you.
+      </div>
     	<hr>
 
   		<h4 class="mt-4"><strong>Question 1</strong></h4>
@@ -137,7 +145,7 @@
           <option value=4>4</option>
           <option value=5>5 (Strongly agree)</option>
   		</select>
-
+      <p id="formError"></p>
 			<a href="#0"><button type="submit" class="btn btn-primary mt-4 submit"><i class="fas fa-check-circle"></i> Submit</button></a>
     </form>
 
@@ -190,21 +198,36 @@
       event.preventDefault();
       console.log("Survey submitted");
 
+      //Grab the values from the form. Store the values in variables.
+      var name = $("#username").val().trim();
+      var photo = $("#userphoto").val().trim();
+      var question1 = $("#question1").val().trim();
+      var question2 =  $("#question2").val().trim();
+      var question3 = $("#question3").val().trim();
+      var question4 = $("#question4").val().trim();
+      var question5 = $("#question5").val().trim();
+      var question6 = $("#question6").val().trim();
+      var question7 = $("#question7").val().trim();
+      var question8 = $("#question8").val().trim();
+      var question9 = $("#question9").val().trim();
+      var question10 = $("#question10").val().trim();
+
+
       // Here we grab the form elements
       var newUser = {
-        "name": $("#username").val().trim(),
-        "photo": $("#userphoto").val().trim(),
+        "name": name,
+        "photo": photo,
 		    "score":[
-  		    $("#question1").val().trim(),
-  		    $("#question2").val().trim(),
-  		    $("#question3").val().trim(),
-  		    $("#question4").val().trim(),
-  		    $("#question5").val().trim(),
-  		    $("#question6").val().trim(),
-  		    $("#question7").val().trim(),
-  		    $("#question8").val().trim(),
-  		    $("#question9").val().trim(),
-  		    $("#question10").val().trim()
+  		    question1,
+  		    question2,
+  		    question3,
+  		    question4,
+  		    question5,
+  		    question6,
+  		    question7,
+  		    question8,
+  		    question9,
+  		    question10
 		    ]
       };
       console.log(newUser);
