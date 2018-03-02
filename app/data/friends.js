@@ -45,7 +45,7 @@ var friendsData = [
 	{
 	  "name": "Jennifer Lawrence",
 	  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Jennifer_Lawrence_SDCC_2015_X-Men.jpg/1200px-Jennifer_Lawrence_SDCC_2015_X-Men.jpg",
-	  "scores": [1, 1, 1, 1, 1, 5, 5, 5, 5, 5]
+	  "scores": [3, 3, 4, 4, 4, 5, 5, 2, 1, 2]
 	}
 ];
 

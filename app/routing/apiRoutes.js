@@ -68,7 +68,7 @@ module.exports = function(app) {
       console.log("Difference in scores: " + totalDifference);
     }
 
-  //After we find a match for the new user, push the user to the friendsData array.
+  //After we find a match for the new user (the friend with the lowest score difference), push the user to the friendsData array.
 	friendsData.push(newUser);
 
   //Return the friend match as json so that we can display the match to the user in the html.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CarpoolBuddy</title>
+	<title>Carpool Buddy</title>
 
     <!--Bootstrap css link-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,34 +18,32 @@
   	<!--Font Awesome icons-->
   	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
+
 <body>
-	<div class="container">
+  <div class="container">
+
+    <!--App jumbotron/header-->
     <div class="jumbotron bg-primary">
-      <h1 class="display-4">CarpoolBuddy</h1>
+      <h1 class="display-4">Carpool Buddy</h1>
       <p class="lead">Never drive to work alone again.</p>
       <a href="/" class="text-dark"><i class="fas fa-home"></i> Home</a>
     </div>
 
+    <!--Survey code/questions goes here-->
     <div class="card">
       <div class="card-header bg-primary">
         Survey questions
       </div>
       <div class="card-body">
-		    <form method="POST" role="form" novalidate>
+		    <form method="POST" role="form">
     			<h3><strong>About you</strong></h3>
     			<label for="exampleFormControlInput1">Name (required)</label>
           <div class="input-group">
           	<input type="text" class="form-control" id="username" placeholder="" required>
-            <div class="invalid-feedback">
-                Enter your name.
-            </div>
           </div>
 
         	<label for="exampleFormControlInput1" class="mt-3">Link to photo image (required)</label>
         	<input type="text" class="form-control" id="userphoto" placeholder="" required>
-          <div class="invalid-feedback">
-            Provide a link to a photo of you.
-          </div>
         	<hr>
 
       		<h4 class="mt-4"><strong>Question 1</strong></h4>
@@ -104,7 +102,7 @@
       		</select>
 
       		<h4 class="mt-4"><strong>Question 6</strong></h4>
-      		<label for="exampleFormControlSelect1">It is often difficult for you to relate to other people’s feelings.</label>
+      		<label for="exampleFormControlSelect1">When driving, you often give the 1 finger wave to other drivers who cut you off.</label>
       		<select class="custom-select" id="question6">
       			<option selected></option>
               <option value=1>1 (Strongly disagree)</option>
@@ -115,7 +113,7 @@
       		</select>
 
       		<h4 class="mt-4"><strong>Question 7</strong></h4>
-      		<label for="exampleFormControlSelect1">You often curse when you're stuck in traffic.</label>
+      		<label for="exampleFormControlSelect1">Driver pays for gas.</label>
       		<select class="custom-select" id="question7">
       			<option selected></option>
               <option value=1>1 (Strongly disagree)</option>
@@ -148,7 +146,7 @@
       		</select>
 
       		<h4 class="mt-4"><strong>Question 10</strong></h4>
-      		<label for="exampleFormControlSelect1">Driver pays for gas.</label>
+      		<label for="exampleFormControlSelect1">You often curse when you're stuck in traffic.</label>
       		<select class="custom-select" id="question10">
       			<option selected></option>
               <option value=1>1 (Strongly disagree)</option>
@@ -171,8 +169,8 @@
     </footer>
 	</div>
 
-  <!--Best Friend/Your Match Modal-->
-  <!--The name and photo of the friend match will be displayed here-->
+  <!--"Your carpool buddy" Modal-->
+  <!--The name and photo of your buddy match will be displayed here when survey is submitted.-->
   <div class="modal" tabindex="-1" role="dialog" id="bestFriendModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -253,10 +251,11 @@
         	console.log(data);
           console.log("Yay! Survey submitted!");
 
-          //Use jQuery to display the name and photo of the friend match in a modal.
+          //Use jQuery to display the name and photo of the buddy match in the carpool buddy modal.
           $('#perfectFriend').text(data.name);
-          $('#perfectFriendPhoto').attr("src", data.photo);
+          $('#perfectFriendPhoto').attr("src", data.photo).addClass("img-fluid");
           //The modal pops up after the survey is submitted and the results are calculated.
+          //The modal should display the name and photo of the buddy match.
           $('#bestFriendModal').modal('toggle');
 
           // Clear the form when submitting
