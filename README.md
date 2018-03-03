@@ -7,8 +7,8 @@
   * [Getting started](#contribute)
   * [Screenshots](#screenshots)
   * [Technologies used to create app](#technologies-used)
-  	* [Backend technolgies](#Backend)
-  	* [Frontend technolgies](#Frontend)
+  	* [Backend technologies](#Backend)
+  	* [Frontend technologies](#Frontend)
   * [Future code development](#feature-enhancements)
   * [Issues](#issues)
 
@@ -59,16 +59,16 @@ The first step is to clone the project repository to a local directory on your c
   <li>
     <p><b>app/routing</b>: This directory contains the routes that are used in the app. The app includes two types of routes, API routes and HTML routes.</p>
     <ul>
-    	<li>The apiRoutes.js file includes two routes.</li>
+    	<li>The API routes are defined in the apiRoutes.js file. This file includes two routes.</li>
     	<ul>
     		<li>A GET route with the url /api/friends. This route is used to display an array of JSON objects that includes all possible users of the app.</li>
     		<li>A POST route with the url /api/friends. This is used to handle incoming survey results. This route is also used to handle the compatibility logic.</li>
     	</ul>
-    	<li>The htmlRoutes.js file includes three routes.</li>
+    	<li>The HTML routes are defined in the htmlRoutes.js file. This file includes three routes.</li>
     	<ul>
     		<li>A GET Route to /survey, which displays the survey page.</li>
     		<li>A route that leads to home.html, which displays the home page.</li>
-    		<li>A route that leads to 404notfound.html, which displays the 404 not found page if the page the user requests cannot be found.</li>
+    		<li>A route that leads to 404notfound.html, which displays the 404 not found page if the page the user requests was moved, deleted, or does not exist.</li>
     	</ul>
   </li>
   <li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
@@ -77,13 +77,13 @@ The first step is to clone the project repository to a local directory on your c
 </ul>
 
 ### <a name="dependencies"></a> Install the dependencies
-<p>The following npm packages are dependencies to the project. You must install these packages in the project root directory (FriendFinder) to be able to use this application from the command line.</p>
+<p>The following npm packages are dependencies to the project.</p>
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
 <pre>npm install</pre>
 <ul>
-	<li>express, which is a Node.js web application framework (https://www.npmjs.com/package/express).</li>
-	<li>body-parser, which parses incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
-	<li>path, which allows the app to get the correct file paths for our HTML.</li>
+	<li><b>express</b>, which is a Node.js web application framework (https://www.npmjs.com/package/express).</li>
+	<li><b>body-parser</b>, which parses incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
+	<li><b>path</b>, which allows the app to get the correct file paths for our HTML (https://www.npmjs.com/package/path).</li>
 </ul>
 
 <p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
