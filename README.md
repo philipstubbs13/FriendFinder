@@ -1,6 +1,7 @@
 # Carpool Buddy
 
 ## Table of contents
+  * [Live](#live)
   * [Demo](#demo)
   * [About this project](#about-this-project)
   * [Getting started](#contribute)
@@ -9,11 +10,14 @@
   * [Future code development](#feature-enhancements)
   * [Issues](#issues)
 
+## <a name="live"></a>Live
+https://blooming-lowlands-71441.herokuapp.com/
+
 ## <a name="demo"></a> Demo
 
 
 ## <a name="about-this-project"></a> About this project
-
+Carpool Buddy is a full stack application that matches you up with another user so that you can take advantage of the carpool lane and have someone to ride with to and from work. It includes a survey of 10 questions that help determine your compatibility with other users of the app. When you submit the survey, the app takes in your survey results and then compares your answers, question by question, with the answers from other users. The app does this by taking the difference between your answer and another user's answer for each question. Then, the app adds up the differences to calculate the total difference, which is the buddy compatibility score. The closest match is the user with the smallest difference. The app displays the name and photo of the user with the best overall match (this person is your carpool buddy).
 
 ## <a name="contribute"></a> Getting started
 To set up this application on your own computer, perform the following steps:
@@ -25,7 +29,7 @@ To set up this application on your own computer, perform the following steps:
 The first step is to clone the project repository to a local directory on your computer. To clone the repository, run the following commands:
 <pre>
   git clone https://github.com/philipstubbs13/FriendFinder.git
-  cd Bamazon
+  cd FriendFinder
 </pre>
 
 ### <a name="install-node"></a> Install Node.js
@@ -33,12 +37,16 @@ The first step is to clone the project repository to a local directory on your c
 
 
 #### <a name="structure-of-project"></a> Structure of the project
-<p>After you clone the repository, navigate to the project root directory (Bamazon). The project directory structure is set up as follows:</p>
+<p>After you clone the repository, navigate to the project root directory (FriendFinder). The project directory structure is set up as follows:</p>
 <ul>
   <li> 
-    <p><b>BamazonCustomer.js</b>: Bamazon Customer Portal. Running this application displays information for all of the items on sale, including item number, product name, department name, and product price.</p>
-    <p>When a customer order is processed, stock quantity and product sales are updated in the database, and the amount that the customer's account is charged is displayed on the screen.</p>
-  </li>
+    <p><b>server.js</b>: This file does the following:</p>
+		<ul>
+	    	<li>Defines and requires the dependencies, including express, body-parser, and path.</li>
+	    	 <li>Sets up the Express server and sets up the Express server to handle data parsing using body-parser.</li>
+	    	 <li>Points the server to the API and HTML route files. These routes give our server a map of how to respond when users visit or request data from various URLs.</li>
+	    	 <li>Starts the server.</li>
+    	</ul>
   <li>
     <p><b>BamazonManager.js</b>: Bamazon Manager Portal. Running this application displays a list of menu options that store managers can choose from. This application allows managers to view all the products for sale, view products that are low in inventory, add inventory, and add a new product to the store. </p>
   </li>
