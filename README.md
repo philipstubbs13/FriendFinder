@@ -43,31 +43,31 @@ The first step is to clone the project repository to a local directory on your c
     <p><b>server.js</b>: This file does the following:</p>
 		<ul>
 	    	<li>Defines and requires the dependencies, including express, body-parser, and path.</li>
-	    	 <li>Sets up the Express server and sets up the Express server to handle data parsing using body-parser.</li>
+	    	 <li>Sets up the Express server.</li>
+	    	 <li>Sets up the Express server to handle data parsing using body-parser.</li>
 	    	 <li>Points the server to the API and HTML route files. These routes give our server a map of how to respond when users visit or request data from various URLs.</li>
 	    	 <li>Starts the server.</li>
     	</ul>
   <li>
-    <p><b>BamazonManager.js</b>: Bamazon Manager Portal. Running this application displays a list of menu options that store managers can choose from. This application allows managers to view all the products for sale, view products that are low in inventory, add inventory, and add a new product to the store. </p>
+    <p><b>app/public</b>: This directory contains the image files and HTML files used in the app. </p>
   </li>
   <li>
-    <p><b>BamazonSupervisor.js</b>: Bamazon Supervisor Portal. Running this application displays a list of menu options that store supervisors can choose from. This application allows supervisors to add a new department to the store by providing information through a series of inquirer prompts.</p>
-    <p>This application also allows supervisors to see a summary (in table format) of product sales by department. Total profit is also displayed in the same table. Total profit is equal to department product sales minus department overhead costs. Total profit is stored outside of the database.</p>
+    <p><b>app/data</b>: This directory contains a file called friends.js. This file includes an array of objects, which is where all of the data (name, photo, and scores) for each user of the app is stored.</p>
   </li>
   <li>
-    <p><b>schema.sql</b>: The database schema. The schema is what describes the structure of each table, and the datatypes that each column of the table can contain. For this project, the database includes two tables, a products table and a departments table.</p>
+    <p><b>app/routing</b>: This directory contains the routes that are used in the app. The app includes two types of routes, API routes and HTML routes.</p>
     <ul>
-      <li>
-        <p>The products table contains information about each product that is sold in the store, including item number/id, product name, department name, price, stock quantity, and product sales.</p>
-        <img src="readme_images/products_table.png">
-      </li>
-      <li>
-        <p>The departments table contains information about each department in the store, including deparment number, department name, and overhead costs.</p>
-        <img src="readme_images/departments_table.png">
-      </li>
-    </ul>
-    <p>For the Supervisor Portal, the products table and departments table are joined to calculate product sales and total profits for each department.</p>
-    <img src="readme_images/department_sales.png">
+    	<li>The apiRoutes.js file includes two routes.</li>
+    	<ul>
+    		</li>A GET route with the url /api/friends. This route is used to display an array of JSON objects that includes all possible users of the app.</li>
+    		<li>A POST route with the url /api/friends. This is used to handle incoming survey results. This route is also used to handle the compatibility logic.</li>
+    	</ul>
+    	<li>The htmlRoutes.js file includes three routes.</li>
+    	<ul>
+    		<li>A GET Route to /survey, which displays the survey page.</li>
+    		<li>A route that leads to home.html, which displays the home page.</li>
+    		<li>A route that leads to 404notfound.html, which displays the 404 not found page if the page the user requests cannot be found.</li>
+    	</ul>
   </li>
   <li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
   <li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
