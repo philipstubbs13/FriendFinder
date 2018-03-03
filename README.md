@@ -91,14 +91,17 @@ The first step is to clone the project repository to a local directory on your c
 ## <a name="screenshots"></a> Screenshots
 
 ### Home 
+<hr>
 <img src="readme_images/home.png">
 
 ### Survey 
+<hr>
 <img src="readme_images/survey.png">
 
 ### Survey results
+<hr>
 <img src="readme_images/survey_results.png">
-<img src="readme_images/survey_results2.png">
+<img src="readme_images/surveyresults2.png">
 
 
 ## <a name="technologies-used"></a> Technologies used to build app
