@@ -90,6 +90,16 @@ The first step is to clone the project repository to a local directory on your c
 
 ## <a name="screenshots"></a> Screenshots
 
+### Home 
+<img src="readme_images/home.png">
+
+### Survey 
+<img src="readme_images/survey.png">
+
+### Survey results
+<img src="readme_images/survey_results.png">
+<img src="readme_images/survey_results2.png">
+
 
 ## <a name="technologies-used"></a> Technologies used to build app
 * [Backend technolgies](#Backend)
