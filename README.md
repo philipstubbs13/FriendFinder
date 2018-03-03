@@ -9,7 +9,7 @@
   * [Technologies used to create app](#technologies-used)
   	* [Backend technologies](#Backend)
   	* [Frontend technologies](#Frontend)
-  * [Future code development](#feature-enhancements)
+  * [Design improvements](#feature-enhancements)
   * [Issues](#issues)
 
 ## <a name="live"></a>Live
@@ -117,9 +117,10 @@ The first step is to clone the project repository to a local directory on your c
 * Javascript
 
 
-## <a name="feature-enhancements"></a> Future code development
-<p>Source code will be developed over time to handle new features.</p>
-<p>The following is a list of potential feature enhancements:</p>
+## <a name="feature-enhancements"></a> Design improvements
+* Form validation
+
+
 
 
 ## <a name ="Issues"></a> Issues
