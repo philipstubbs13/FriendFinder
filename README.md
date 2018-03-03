@@ -7,6 +7,8 @@
   * [Getting started](#contribute)
   * [Screenshots](#screenshots)
   * [Technologies used to create app](#technologies-used)
+  	* [Backend technolgies](#Backend)
+  	* [Frontend technolgies](#Frontend)
   * [Future code development](#feature-enhancements)
   * [Issues](#issues)
 
@@ -59,7 +61,7 @@ The first step is to clone the project repository to a local directory on your c
     <ul>
     	<li>The apiRoutes.js file includes two routes.</li>
     	<ul>
-    		</li>A GET route with the url /api/friends. This route is used to display an array of JSON objects that includes all possible users of the app.</li>
+    		<li>A GET route with the url /api/friends. This route is used to display an array of JSON objects that includes all possible users of the app.</li>
     		<li>A POST route with the url /api/friends. This is used to handle incoming survey results. This route is also used to handle the compatibility logic.</li>
     	</ul>
     	<li>The htmlRoutes.js file includes three routes.</li>
@@ -78,6 +80,11 @@ The first step is to clone the project repository to a local directory on your c
 <p>The following npm packages are dependencies to the project. You must install these packages in the project root directory (FriendFinder) to be able to use this application from the command line.</p>
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required npm packages:</p>
 <pre>npm install</pre>
+<ul>
+	<li>express, which is a Node.js web application framework (https://www.npmjs.com/package/express).</li>
+	<li>body-parser, which parses incoming request bodies in a middleware. (https://www.npmjs.com/package/body-parser)</li>
+	<li>path, which allows the app to get the correct file paths for our HTML.</li>
+</ul>
 
 <p>Version information for each of these packages is available in the package.json file in the project root directory.</p>
 
@@ -85,10 +92,18 @@ The first step is to clone the project repository to a local directory on your c
 
 
 ## <a name="technologies-used"></a> Technologies used to build app
+* [Backend technolgies](#Backend)
+* [Frontend technologies](#Frontend)
 
-  * Node.js (https://nodejs.org/en/)
-  * Javascript
-  * Express 
+### <a name ="Backend"></a> Backend technologies
+* Node.js (https://nodejs.org/en/)
+* Express (https://expressjs.com/)
+
+### <a name="Frontend"></a> Frontend technolgoies
+* HTML
+* Bootstrap (http://getbootstrap.com/)
+* Javascript
+
 
 ## <a name="feature-enhancements"></a> Future code development
 <p>Source code will be developed over time to handle new features.</p>
