@@ -91,16 +91,14 @@ The first step is to clone the project repository to a local directory on your c
 ## <a name="screenshots"></a> Screenshots
 
 ### Home 
-<hr>
 <img src="readme_images/home.png">
 
 ### Survey 
-<hr>
 <img src="readme_images/survey.png">
 
 ### Survey results
-<hr>
 <img src="readme_images/survey_results.png">
+<br>
 <img src="readme_images/surveyresults2.png">
 
 
