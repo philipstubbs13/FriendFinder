@@ -35,15 +35,19 @@
         Survey questions
       </div>
       <div class="card-body">
-		    <form method="POST" role="form">
+		    <form method="POST" role="form" data-abide novalidate>
     			<h3><strong>About you</strong></h3>
-    			<label for="exampleFormControlInput1">Name (required)</label>
-          	<input type="text" class="form-control" id="username" placeholder="" required>
-          <!--<div class="invalid-feedback">Required field. Enter your name.</div> -->
+          <div class="input-wrapper">
+      			<label for="exampleFormControlInput1">Name (required)</label>
+            <input type="text" class="form-control" id="username" placeholder="" required>
+            <small class="form-error" style="display: none;">Name is required.</small>
+          </div>
 
-        	<label for="exampleFormControlInput1" class="mt-3">Link to photo image (required)</label>
-        	<input type="text" class="form-control" id="userphoto" placeholder="" required>
-          <!--<div class="invalid-feedback"> Required field. Enter a link to a photo of yourself so that other users can recognize you. </div> -->
+          <div class="input-wrapper">
+          	<label for="exampleFormControlInput1" class="mt-3">Link to photo image (required)</label>
+          	<input type="text" class="form-control" id="userphoto" placeholder="" required>
+            <small class="form-error" style="display: none;">Photo is required.</small>
+          </div>
         	<hr>
 
       		<h4 class="mt-4"><strong>Question 1</strong></h4>
@@ -56,7 +60,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 2</strong></h4>
       		<label for="exampleFormControlSelect1">More specifically, you like listening to country music while in the car.</label>
@@ -68,7 +71,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!--<div class="invalid-feedback">Required field. Enter your name.</div> -->
 
       		<h4 class="mt-4"><strong>Question 3</strong></h4>
       		<label for="exampleFormControlSelect1">You are a cautious driver who generally goes the speed limit.</label>
@@ -80,7 +82,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 4</strong></h4>
       		<label for="exampleFormControlSelect1">You enjoy small talk while in the car.</label>
@@ -92,7 +93,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 5</strong></h4>
       		<label for="exampleFormControlSelect1">People can rarely upset you.</label>
@@ -104,7 +104,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 6</strong></h4>
       		<label for="exampleFormControlSelect1">You consider yourself a "Minnesota nice" type of driver.</label>
@@ -116,7 +115,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 7</strong></h4>
       		<label for="exampleFormControlSelect1">Driver pays for gas.</label>
@@ -128,7 +126,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 8</strong></h4>
       		<label for="exampleFormControlSelect1">You like to get somewhere with as few stops in between as possible.</label>
@@ -140,7 +137,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
 
       		<h4 class="mt-4"><strong>Question 9</strong></h4>
       		<label for="exampleFormControlSelect1">You are generally good with directions.</label>
@@ -152,7 +148,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
   
       		<h4 class="mt-4"><strong>Question 10</strong></h4>
       		<label for="exampleFormControlSelect1">You often curse when you're stuck in traffic.</label>
@@ -164,7 +159,6 @@
                 <option value=50>4</option>
                 <option value=90>5 (Strongly agree)</option>
         		</select>
-            <!-- <div class="invalid-feedback">Required field. Select a number.</div> -->
           <p id="formError"></p>
     			<a href="#0"><button type="submit" class="btn btn-primary mt-4 submit"><i class="fas fa-check-circle"></i> Submit</button></a>
         </form>
@@ -201,9 +195,28 @@
     </div>
   </div>
 
+  <!--"Form Validation Error Modal-->
+  <div class="modal" tabindex="-1" role="dialog" id="formErrorModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorMessage"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="errorAction"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary rounded" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--Bootstrap Javascript link-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </body>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
@@ -211,35 +224,13 @@
     // The new default behavior for JQuery's post method is to add brackets to the end of properties whose values are arrays.  To override this behavior, include the line `$.ajaxSettings.traditional = true;` at the top of the script to configure JQuery to it's traditional behavior
     $.ajaxSettings.traditional = true;
 
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    // (function() {
-    //   'use strict';
-    //   window.addEventListener('load', function() {
-    //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    //     var forms = document.getElementsByClassName('needs-validation');
-    //     // Loop over them and prevent submission
-    //     var validation = Array.prototype.filter.call(forms, function(form) {
-    //       form.addEventListener('submit', function(event) {
-    //         if (form.checkValidity() === false) {
-    //           event.preventDefault();
-    //           event.stopPropagation();
-    //         }
-
-    //         form.classList.add('was-validated');
-
-    //       }, false);
-
-    //     });
-
-    //   }, false);
-    // })();
-
     // In this code below, we create the front end Javascript, which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
     // Our api recognizes the route (/api/friends)... and then runs the associated code (found in apiRoutes.js).
     // In this case, the associated code "saves" the data to the friends.js file
 
     $(".submit").on("click", function(event) {
+      var formValid = true;
       event.preventDefault();
       console.log("Survey submitted");
 
@@ -276,35 +267,54 @@
       };
       console.log(newUser);
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server.
-      $.post("/api/friends", newUser, function(data) {
-        	console.log(data);
-          console.log("Yay! Survey submitted!");
+      //Form validation - if user does not provide name, show appropriate form error message in modal
+      if (newUser.name === "") {
+        $('#errorMessage').text("No name provided.");
+        $('#errorAction').text("Enter your name in the Name field to continue.");
+        $('#formErrorModal').modal('show');
+        formValid = false; 
+      }
 
-          //Use jQuery to display the name and photo of the buddy match in the carpool buddy modal.
-          $('.modal-title').text("Your carpool buddy");
-          $('#perfectFriend').text(data.name);
-          $('#perfectFriendPhoto').attr("src", data.photo).addClass("img-fluid");
-          //The modal pops up after the survey is submitted and the results are calculated.
-          //The modal should display the name and photo of the buddy match.
-          $('#bestFriendModal').modal('toggle');
+      //Form validation - if user does not provide photo, show appropriate form error message in mdal.
+      else if (newUser.photo == "") {
+        $('#errorMessage').text("No photo provided.");
+        $('#errorAction').text("Provide a link to a photo of yourself in the Link to photo image field to continue.");
+        $('#formErrorModal').modal('show');
+        formValid = false; 
+      }
 
-          // Clear the form when submitting
-          	$("#username").val("");
-          	$("#userphoto").val("");
-    		    $("#question1").val("");
-    		    $("#question2").val("");
-    		    $("#question3").val("");
-    		    $("#question4").val("");
-    		    $("#question5").val("");
-    		    $("#question6").val("");
-    		    $("#question7").val("");
-    		    $("#question8").val("");
-    		    $("#question9").val("");
-    		    $("#question10").val("");
-        });
+      //If user provides required information, process survey and display results.
+      else {
+        // This line is the magic. It"s very similar to the standard ajax function we used.
+        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+        // The callback is the response of the server.
+        $.post("/api/friends", newUser, function(data) {
+          	console.log(data);
+            console.log("Yay! Survey submitted!");
+
+            //Use jQuery to display the name and photo of the buddy match in the carpool buddy modal.
+            $('.modal-title').text("Your carpool buddy");
+            $('#perfectFriend').text(data.name);
+            $('#perfectFriendPhoto').attr("src", data.photo).addClass("img-fluid");
+            //The modal pops up after the survey is submitted and the results are calculated.
+            //The modal should display the name and photo of the buddy match.
+            $('#bestFriendModal').modal('show');
+
+            // Clear the form when submitting
+            	$("#username").val("");
+            	$("#userphoto").val("");
+      		    $("#question1").val("");
+      		    $("#question2").val("");
+      		    $("#question3").val("");
+      		    $("#question4").val("");
+      		    $("#question5").val("");
+      		    $("#question6").val("");
+      		    $("#question7").val("");
+      		    $("#question8").val("");
+      		    $("#question9").val("");
+      		    $("#question10").val("");
+          });
+      }
     });
 </script>
 
