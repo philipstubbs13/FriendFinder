@@ -272,7 +272,7 @@
         $('#errorMessage').text("No name provided.");
         $('#errorAction').text("Enter your name in the Name field to continue.");
         $('#formErrorModal').modal('show');
-        formValid = false; 
+        return false; 
       }
 
       //Form validation - if user does not provide photo, show appropriate form error message in mdal.
@@ -280,7 +280,15 @@
         $('#errorMessage').text("No photo provided.");
         $('#errorAction').text("Provide a link to a photo of yourself in the Link to photo image field to continue.");
         $('#formErrorModal').modal('show');
-        formValid = false; 
+        return false; 
+      }
+
+      //Form validation - if user does not answer all questions, show appropriate form error message in modal.
+      else if (question1 === "" || question2 === "" || question3 === "" || question4 === "" || question5 === "" || question6 === "" || question7 === "" || question8 === "" || question9 === "" || question10 === ""){
+        $('#errorMessage').text("One or more survey questions was not answered.");
+        $('#errorAction').text("Provide an answer for ALL questions to continue.");
+        $('#formErrorModal').modal('show');
+        return false;   
       }
 
       //If user provides required information, process survey and display results.
